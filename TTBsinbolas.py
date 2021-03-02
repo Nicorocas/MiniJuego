@@ -13,14 +13,13 @@ pantalla=turtle.Screen()
 pantalla.bgpic("fondo.gif")
 pantalla.title("Tortuga TragaBolas")
 pantalla.setup(width = 600, height = 600)
-pantalla.register_shape("blackhole.gif")
-pantalla.register_shape("comida1.gif")
-pantalla.register_shape("bomba.gif")
-pantalla.register_shape("minamorada.gif")
-pantalla.register_shape("comida.gif")
-pantalla.register_shape("comida3.gif")
-pantalla.register_shape("arrecife.gif")
-pantalla.register_shape("botellas.gif")
+
+#Bucle for para registrar las imagenes
+listagif = ["blackhole.gif","comida1.gif","bomba.gif","minamorada.gif",
+"comida.gif","comida3.gif","arrecife.gif","botellas.gif"]
+for i in listagif:
+	pantalla.register_shape(i)
+
 
 #cabeza de la tortuga
 corazon =turtle.Turtle()
@@ -43,10 +42,6 @@ comida.direction = "stop"
 comida.showturtle()
 
 #Debuffs
-
-
-
-
 v_mina = turtle.Turtle()
 v_mina.speed(0)
 v_mina.shape("minamorada.gif")
@@ -250,7 +245,26 @@ def mov():
 		y = random.randint(-230,230)
 		corazon.goto(x,y)
 		#corazon.direction = "stop"		
-
+def morir():
+		winsound.PlaySound("death", winsound.SND_FILENAME)
+		corazon.color("black")
+		corazon.goto(0,0)	
+		corazon.write("Estás muerto",align="center", font=("Comic_sans",18	,"normal"))
+		corazon.direction = "stop"	
+		comida2.goto(700,700)
+		buff.goto(700,700)
+		entrada.goto(700,700)
+		salida.goto(700,700)
+		b_mina1.goto(700,700)
+		v_mina1.goto(700,700)
+		b_mina.goto(700,700)
+		v_mina.goto(700,700)
+		b_mina2.goto(700,700)
+		v_mina2.goto(700,700)
+		b_mina3.goto(700,700)
+		v_mina3.goto(700,700)
+		b_mina4.goto(700,700)
+		v_mina4.goto(700,700)
 #esta serie de comandos permite dectectar el teclado, y le asignamos dirrecciones.
 pantalla.listen()
 pantalla.onkeypress(arriba, "Up")
@@ -437,25 +451,7 @@ while True:
 
 		 
 	if corazon.distance(b_mina)<40: #muerte por mina negra
-		winsound.PlaySound("death", winsound.SND_FILENAME)
-		corazon.color("black")
-		corazon.goto(0,0)	
-		corazon.write("Estás muerto",align="center", font=("Comic_sans",18	,"normal"))
-		corazon.direction = "stop"	
-		comida2.goto(700,700)
-		buff.goto(700,700)
-		entrada.goto(700,700)
-		salida.goto(700,700)
-		b_mina1.goto(700,700)
-		v_mina1.goto(700,700)
-		b_mina.goto(700,700)
-		v_mina.goto(700,700)
-		b_mina2.goto(700,700)
-		v_mina2.goto(700,700)
-		b_mina3.goto(700,700)
-		v_mina3.goto(700,700)
-		b_mina4.goto(700,700)
-		v_mina4.goto(700,700)
+		morir()
 		
 		
 				#Reinicio de la pantalla
@@ -470,25 +466,7 @@ while True:
 		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
 			
 	if corazon.distance(b_mina1) <40: 
-		winsound.PlaySound("death", winsound.SND_FILENAME)
-		corazon.color("black")
-		corazon.goto(0,0)	
-		corazon.write("Estás muerto",align="center", font=("Comic_sans",18	,"normal"))
-		corazon.direction = "stop"	
-		comida2.goto(700,700)
-		buff.goto(700,700)
-		entrada.goto(700,700)
-		salida.goto(700,700)
-		b_mina1.goto(700,700)
-		v_mina1.goto(700,700)
-		b_mina.goto(700,700)
-		v_mina.goto(700,700)
-		b_mina2.goto(700,700)
-		v_mina2.goto(700,700)
-		b_mina3.goto(700,700)
-		v_mina3.goto(700,700)
-		b_mina4.goto(700,700)
-		v_mina4.goto(700,700)
+		morir()
 		
 		
 				#Reinicio de la pantalla
@@ -503,25 +481,7 @@ while True:
 		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
 	
 	if corazon.distance(b_mina2)<40 : 
-		winsound.PlaySound("death", winsound.SND_FILENAME)
-		corazon.color("black")
-		corazon.goto(0,0)	
-		corazon.write("Estás muerto",align="center", font=("Comic_sans",18	,"normal"))
-		corazon.direction = "stop"	
-		comida2.goto(700,700)
-		buff.goto(700,700)
-		entrada.goto(700,700)
-		salida.goto(700,700)
-		b_mina1.goto(700,700)
-		v_mina1.goto(700,700)
-		b_mina.goto(700,700)
-		v_mina.goto(700,700)
-		b_mina2.goto(700,700)
-		v_mina2.goto(700,700)
-		b_mina3.goto(700,700)
-		v_mina3.goto(700,700)
-		b_mina4.goto(700,700)
-		v_mina4.goto(700,700)
+		morir()
 		
 		
 				#Reinicio de la pantalla
@@ -536,26 +496,7 @@ while True:
 		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
 	
 	if corazon.distance(b_mina3)<40 :
-		winsound.PlaySound("death", winsound.SND_FILENAME)
-		corazon.color("black")
-		corazon.goto(0,0)	
-		corazon.write("Estás muerto",align="center", font=("Comic_sans",18	,"normal"))
-		corazon.direction = "stop"	
-		comida2.goto(700,700)
-		buff.goto(700,700)
-		entrada.goto(700,700)
-		salida.goto(700,700)
-		b_mina1.goto(700,700)
-		v_mina1.goto(700,700)
-		b_mina.goto(700,700)
-		v_mina.goto(700,700)
-		b_mina2.goto(700,700)
-		v_mina2.goto(700,700)
-		b_mina3.goto(700,700)
-		v_mina3.goto(700,700)
-		b_mina4.goto(700,700)
-		v_mina4.goto(700,700)
-		
+		morir()
 		
 				#Reinicio de la pantalla
 		time.sleep(2)				
@@ -568,27 +509,9 @@ while True:
 		texto.clear()
 		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
 	
-	if corazon.distance(b_mina4)<40 :
-		winsound.PlaySound("death", winsound.SND_FILENAME)
-		corazon.color("black")
-		corazon.goto(0,0)	
-		corazon.write("Estás muerto",align="center", font=("Comic_sans",18	,"normal"))
-		corazon.direction = "stop"	
-		comida2.goto(700,700)
-		buff.goto(700,700)
-		entrada.goto(700,700)
-		salida.goto(700,700)
-		b_mina1.goto(700,700)
-		v_mina1.goto(700,700)
-		b_mina.goto(700,700)
-		v_mina.goto(700,700)
-		b_mina2.goto(700,700)
-		v_mina2.goto(700,700)
-		b_mina3.goto(700,700)
-		v_mina3.goto(700,700)
-		b_mina4.goto(700,700)
-		v_mina4.goto(700,700)
 		
+	if corazon.distance(b_mina4)<40 :
+		morir()
 		
 				#Reinicio de la pantalla
 		time.sleep(2)				
