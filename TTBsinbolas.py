@@ -84,7 +84,10 @@ def botl(botella):
 	botella.goto(1000,1000) 
 	botella.direction = "stop"
 	botella.showturtle()
-
+	
+b_mina = turtle.Turtle()
+bomb(b_mina)
+	
 b_mina1 = turtle.Turtle()
 bomb(b_mina1)
 
@@ -245,22 +248,13 @@ def comer():
 	x = random.randint(-300,300)
 	y = random.randint(-300,300)
 	comida2.goto(x,y)
-	Score +=1 
-	if Score > High_Score:
-		High_Score =Score
-		texto.clear()
-		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
+	
 #funcion comer2
 def comer2():
 	winsound.PlaySound("comer", winsound.SND_FILENAME)
 	x = random.randint(-300,300)
 	y = random.randint(-300,300)
 	comida3.goto(x,y)
-	Score +=10
-	if Score > High_Score:
-		High_Score =Score
-		texto.clear()
-		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
 	
 	
 #esta serie de comandos permite dectectar el teclado, y le asignamos dirrecciones.
@@ -298,12 +292,29 @@ while True:
 	#colision con la comida	
 	if corazon.distance(comida) < 20:
 		comer()
+		Score +=1 
+		if Score > High_Score:
+			High_Score =Score
+			texto.clear()
+			texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
 	#colision con comida dos
 	if corazon.distance(comida2) < 20:
 		comer()
+		Score +=1 
+		if Score > High_Score:
+			High_Score =Score
+			texto.clear()
+			texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
+	
 	#colision comida 3
 	if corazon.distance(comida3) < 20:
 		comer2()
+		Score +=10
+		if Score > High_Score:
+			High_Score =Score
+			texto.clear()
+			texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
+
 
 	mov()
 
