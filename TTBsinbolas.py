@@ -265,6 +265,41 @@ def morir():
 		v_mina3.goto(700,700)
 		b_mina4.goto(700,700)
 		v_mina4.goto(700,700)
+		#Reinicio de la pantalla
+		time.sleep(2)				
+		corazon.clear()
+		corazon.shape("turtle")
+		corazon.color("green")
+				
+				# Resetear marcador
+		Score = 0
+		texto.clear()
+		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
+		
+#funcion comer
+def comer():
+	winsound.PlaySound("comer", winsound.SND_FILENAME)
+	x = random.randint(-300,300)
+	y = random.randint(-300,300)
+	comida2.goto(x,y)
+	Score +=1 
+	if Score > High_Score:
+		High_Score =Score
+		texto.clear()
+		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
+#funcion comer2
+def comer2():
+	winsound.PlaySound("comer", winsound.SND_FILENAME)
+	x = random.randint(-300,300)
+	y = random.randint(-300,300)
+	comida3.goto(x,y)
+	Score +=10
+	if Score > High_Score:
+		High_Score =Score
+		texto.clear()
+		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
+	
+	
 #esta serie de comandos permite dectectar el teclado, y le asignamos dirrecciones.
 pantalla.listen()
 pantalla.onkeypress(arriba, "Up")
@@ -274,7 +309,7 @@ pantalla.onkeypress(izquierda, "Right")
 pantalla.onkeypress(Teleport, "r")
 pantalla.onkeypress(Suicide, "s")
 
-
+#empieza el juego
 while True:
 	time.sleep(slow)		
 
@@ -282,25 +317,7 @@ while True:
 	
 		#colisiones con los bordes
 	if corazon.xcor()>300 or corazon.xcor()<-300 or corazon.ycor()>300 or corazon.ycor()<-300:
-		winsound.PlaySound("death", winsound.SND_FILENAME)
-		corazon.color("black")
-		corazon.goto(0,0)	
-		corazon.write("Estás muerto",align="center", font=("Comic_sans",18	,"normal"))
-		corazon.direction = "stop"	
-		comida2.goto(700,700)
-		buff.goto(700,700)
-		entrada.goto(700,700)
-		salida.goto(700,700)
-		b_mina1.goto(700,700)
-		v_mina1.goto(700,700)
-		b_mina.goto(700,700)
-		v_mina.goto(700,700)
-		b_mina2.goto(700,700)
-		v_mina2.goto(700,700)
-		b_mina3.goto(700,700)
-		v_mina3.goto(700,700)
-		b_mina4.goto(700,700)
-		v_mina4.goto(700,700)
+		morir()
 		
 		
 		#Reinicio de la pantalla
@@ -317,48 +334,13 @@ while True:
 
 	#colision con la comida	
 	if corazon.distance(comida) < 20:
-		winsound.PlaySound("comer", winsound.SND_FILENAME)
-		x = random.randint(-230,230)
-		y = random.randint(-230,230)
-		comida.goto(x,y)
-		
-		
-
-		Score +=1 
-		if Score > High_Score:
-			High_Score =Score
-
-		texto.clear()
-		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
-	
+		comer()
 	#colision con comida dos
 	if corazon.distance(comida2) < 20:
-		winsound.PlaySound("comer", winsound.SND_FILENAME)
-		x = random.randint(-300,300)
-		y = random.randint(-300,300)
-		comida2.goto(x,y)
-
-		
-		Score +=1 
-		if Score > High_Score:
-			High_Score =Score
-
-		texto.clear()
-		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
-	
+		comer()
+	#colision comida 3
 	if corazon.distance(comida3) < 20:
-		winsound.PlaySound("comer", winsound.SND_FILENAME)
-		x = random.randint(-800,800)
-		y = random.randint(-800,800)
-		comida3.goto(x,y)
-
-		Score +=10
-		if Score > High_Score:
-			High_Score =Score
-
-		texto.clear()
-		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
-
+		comer2()
 
 	mov()
 
@@ -452,74 +434,17 @@ while True:
 		 
 	if corazon.distance(b_mina)<40: #muerte por mina negra
 		morir()
-		
-		
-				#Reinicio de la pantalla
-		time.sleep(2)				
-		corazon.clear()
-		corazon.shape("turtle")
-		corazon.color("green")
-				
-				# Resetear marcador
-		Score = 0
-		texto.clear()
-		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
 			
 	if corazon.distance(b_mina1) <40: 
 		morir()
-		
-		
-				#Reinicio de la pantalla
-		time.sleep(2)				
-		corazon.clear()
-		corazon.shape("turtle")
-		corazon.color("green")
-				
-				# Resetear marcador
-		Score = 0
-		texto.clear()
-		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
-	
+			
 	if corazon.distance(b_mina2)<40 : 
 		morir()
-		
-		
-				#Reinicio de la pantalla
-		time.sleep(2)				
-		corazon.clear()
-		corazon.shape("turtle")
-		corazon.color("green")
-				
-				# Resetear marcador
-		Score = 0
-		texto.clear()
-		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
 	
 	if corazon.distance(b_mina3)<40 :
 		morir()
-		
-				#Reinicio de la pantalla
-		time.sleep(2)				
-		corazon.clear()
-		corazon.shape("turtle")
-		corazon.color("green")
-				
-				# Resetear marcador
-		Score = 0
-		texto.clear()
-		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
-	
-		
+			
 	if corazon.distance(b_mina4)<40 :
 		morir()
 		
-				#Reinicio de la pantalla
-		time.sleep(2)				
-		corazon.clear()
-		corazon.shape("turtle")
-		corazon.color("green")
 				
-				# Resetear marcador
-		Score = 0
-		texto.clear()
-		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
