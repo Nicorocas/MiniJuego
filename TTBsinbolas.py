@@ -42,91 +42,60 @@ comida.direction = "stop"
 comida.showturtle()
 
 #Debuffs
+#funcion para debiuffs
+def debuff(mina):
+	mina.speed(0)
+	mina.shape("minamorada.gif")
+	mina.penup()  
+	mina.goto(1000,1000) 
+	mina.direction = "stop"
+	mina.showturtle()
+	
 v_mina = turtle.Turtle()
-v_mina.speed(0)
-v_mina.shape("minamorada.gif")
-v_mina.penup()  
-v_mina.goto(1000,1000) 
-v_mina.direction = "stop"
-v_mina.showturtle()
+debuff(v_mina)
 
 v_mina1 = turtle.Turtle()
-v_mina1.speed(0)
-v_mina1.shape("minamorada.gif")
-v_mina1.penup()  
-v_mina1.goto(1000,1000) 
-v_mina1.direction = "stop"
-v_mina1.showturtle()
+debuff(v_mina1)
 
 v_mina2 = turtle.Turtle()
-v_mina2.speed(0)
-v_mina2.shape("minamorada.gif")
-v_mina2.penup()  
-v_mina2.goto(1000,1000) 
-v_mina2.direction = "stop"
-v_mina2.showturtle()
+debuff(v_mina2)
 
 v_mina3 = turtle.Turtle()
-v_mina3.speed(0)
-v_mina3.shape("minamorada.gif")
-v_mina3.penup()  
-v_mina3.goto(1000,1000) 
-v_mina3.direction = "stop"
-v_mina3.showturtle()
+debuff(v_mina3)
 
 v_mina4 = turtle.Turtle()
-v_mina4.speed(0)
-v_mina4.shape("minamorada.gif")
-v_mina4.penup()  
-v_mina4.goto(1000,1000) 
-v_mina4.direction = "stop"
-v_mina4.showturtle()
+debuff(v_mina4)
 
 #Bombas
-b_mina = turtle.Turtle()
-b_mina.speed(0)
-b_mina.shape("bomba.gif")
-b_mina.color("black")
-b_mina.penup()  
-b_mina.goto(1000,1000) 
-b_mina.direction = "stop"
-b_mina.showturtle()
+#funcion bomvas
+def bomb(bomba):
+	bomba.shape("bomba.gif")
+	bomba.color("black")
+	bomba.penup()  
+	bomba.goto(1000,1000) 
+	bomba.direction = "stop"
+	bomba.showturtle()
+	bomba = turtle.Turtle()
+def botl(botella):
+	botella.speed(0)
+	botella.shape("botellas.gif")
+	botella.color("black")
+	botella.penup()  
+	botella.goto(1000,1000) 
+	botella.direction = "stop"
+	botella.showturtle()
 
 b_mina1 = turtle.Turtle()
-b_mina1.speed(0)
-b_mina1.shape("bomba.gif")
-b_mina1.color("black")
-b_mina1.penup()  
-b_mina1.goto(1000,1000) 
-b_mina1.direction = "stop"
-b_mina1.showturtle()
+bomb(b_mina1)
 
 b_mina2 = turtle.Turtle()
-b_mina2.speed(0)
-b_mina2.shape("botellas.gif")
-b_mina2.color("black")
-b_mina2.penup()  
-b_mina2.goto(1000,1000) 
-b_mina2.direction = "stop"
-b_mina2.showturtle()
+botl(b_mina2)
 
 b_mina3 = turtle.Turtle()
-b_mina3.speed(0)
-b_mina3.shape("bomba.gif")
-b_mina3.color("black")
-b_mina3.penup()  
-b_mina3.goto(1000,1000) 
-b_mina3.direction = "stop"
-b_mina3.showturtle()
+bomb(b_mina3)
 
 b_mina4 = turtle.Turtle()
-b_mina4.speed(0)
-b_mina4.shape("botellas.gif")
-b_mina4.color("black")
-b_mina4.penup()  
-b_mina4.goto(1000,1000) 
-b_mina4.direction = "stop"
-b_mina4.showturtle()
+botl(b_mina4)
 
 #Buffs
 buff =turtle.Turtle()
@@ -171,12 +140,6 @@ comida3.penup() #penup se utiliza para borrar el rastro en el metodo turtle
 comida3.goto(700,700) #cordenada donde comienza la cabeza
 comida3.direction = "stop"
 comida3.showturtle()	
-
-
-#cuerpo serpiente a partir de una lista
-
-
-
 
 #Texto de los marcadores
 texto =turtle.Turtle()
@@ -377,7 +340,7 @@ while True:
 			corazon.goto(-200,200)
 				
 
-	# Aparición de Debuffs
+	# Aparición de Debuffs en funcion de la puntuacion
 
 	if Score>0 <20:
 		 
