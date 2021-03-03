@@ -10,17 +10,17 @@ High_Score=0
 
 #pantalla
 pantalla=turtle.Screen()
-pantalla.bgpic("fondo.gif")
+pantalla.bgpic("imagenes/fondo.gif")
 pantalla.title("Tortuga TragaBolas")
 pantalla.setup(width = 600, height = 600)
-pantalla.register_shape("blackhole.gif")
-pantalla.register_shape("comida1.gif")
-pantalla.register_shape("bomba.gif")
-pantalla.register_shape("minamorada.gif")
-pantalla.register_shape("comida.gif")
-pantalla.register_shape("comida3.gif")
-pantalla.register_shape("arrecife.gif")
-pantalla.register_shape("botellas.gif")
+pantalla.register_shape("imagenes/blackhole.gif")
+pantalla.register_shape("imagenes/comida1.gif")
+pantalla.register_shape("imagenes/bomba.gif")
+pantalla.register_shape("imagenes/minamorada.gif")
+pantalla.register_shape("imagenes/comida.gif")
+pantalla.register_shape("imagenes/comida3.gif")
+pantalla.register_shape("imagenes/arrecife.gif")
+pantalla.register_shape("imagenes/botellas.gif")
 
 #cabeza de la tortuga
 corazon =turtle.Turtle()
@@ -35,7 +35,7 @@ corazon.showturtle()
 #comida
 comida =turtle.Turtle()
 comida.speed(0)
-comida.shape("comida1.gif")
+comida.shape("imagenes/comida1.gif")
 comida.color("yellow")
 comida.penup() #penup se utiliza para borrar el rastro en el metodo turtle
 comida.goto(48,150) #cordenada donde comienza la cabeza
@@ -49,7 +49,7 @@ comida.showturtle()
 
 v_mina = turtle.Turtle()
 v_mina.speed(0)
-v_mina.shape("minamorada.gif")
+v_mina.shape("imagenes/minamorada.gif")
 v_mina.penup()  
 v_mina.goto(1000,1000) 
 v_mina.direction = "stop"
@@ -57,7 +57,7 @@ v_mina.showturtle()
 
 v_mina1 = turtle.Turtle()
 v_mina1.speed(0)
-v_mina1.shape("minamorada.gif")
+v_mina1.shape("imagenes/minamorada.gif")
 v_mina1.penup()  
 v_mina1.goto(1000,1000) 
 v_mina1.direction = "stop"
@@ -65,7 +65,7 @@ v_mina1.showturtle()
 
 v_mina2 = turtle.Turtle()
 v_mina2.speed(0)
-v_mina2.shape("minamorada.gif")
+v_mina2.shape("imagenes/minamorada.gif")
 v_mina2.penup()  
 v_mina2.goto(1000,1000) 
 v_mina2.direction = "stop"
@@ -73,7 +73,7 @@ v_mina2.showturtle()
 
 v_mina3 = turtle.Turtle()
 v_mina3.speed(0)
-v_mina3.shape("minamorada.gif")
+v_mina3.shape("imagenes/minamorada.gif")
 v_mina3.penup()  
 v_mina3.goto(1000,1000) 
 v_mina3.direction = "stop"
@@ -81,7 +81,7 @@ v_mina3.showturtle()
 
 v_mina4 = turtle.Turtle()
 v_mina4.speed(0)
-v_mina4.shape("minamorada.gif")
+v_mina4.shape("imagenes/minamorada.gif")
 v_mina4.penup()  
 v_mina4.goto(1000,1000) 
 v_mina4.direction = "stop"
@@ -90,7 +90,7 @@ v_mina4.showturtle()
 #Bombas
 b_mina = turtle.Turtle()
 b_mina.speed(0)
-b_mina.shape("bomba.gif")
+b_mina.shape("imagenes/bomba.gif")
 b_mina.color("black")
 b_mina.penup()  
 b_mina.goto(1000,1000) 
@@ -99,7 +99,7 @@ b_mina.showturtle()
 
 b_mina1 = turtle.Turtle()
 b_mina1.speed(0)
-b_mina1.shape("bomba.gif")
+b_mina1.shape("imagenes/bomba.gif")
 b_mina1.color("black")
 b_mina1.penup()  
 b_mina1.goto(1000,1000) 
@@ -108,7 +108,7 @@ b_mina1.showturtle()
 
 b_mina2 = turtle.Turtle()
 b_mina2.speed(0)
-b_mina2.shape("botellas.gif")
+b_mina2.shape("imagenes/botellas.gif")
 b_mina2.color("black")
 b_mina2.penup()  
 b_mina2.goto(1000,1000) 
@@ -117,7 +117,7 @@ b_mina2.showturtle()
 
 b_mina3 = turtle.Turtle()
 b_mina3.speed(0)
-b_mina3.shape("bomba.gif")
+b_mina3.shape("imagenes/bomba.gif")
 b_mina3.color("black")
 b_mina3.penup()  
 b_mina3.goto(1000,1000) 
@@ -126,7 +126,7 @@ b_mina3.showturtle()
 
 b_mina4 = turtle.Turtle()
 b_mina4.speed(0)
-b_mina4.shape("botellas.gif")
+b_mina4.shape("imagenes/botellas.gif")
 b_mina4.color("black")
 b_mina4.penup()  
 b_mina4.goto(1000,1000) 
@@ -138,7 +138,7 @@ buff =turtle.Turtle()
 buff.speed(0)
 buff.penup()
 buff.goto(700,700)
-buff.shape("arrecife.gif")
+buff.shape("imagenes/arrecife.gif")
 
 buff.hideturtle()
  #Buff2
@@ -150,20 +150,20 @@ entrada =turtle.Turtle()
 entrada.speed(0)
 entrada.penup()
 entrada.goto(700,700)
-entrada.shape("blackhole.gif")
+entrada.shape("imagenes/blackhole.gif")
 entrada.hideturtle()
 
 salida =turtle.Turtle()
 salida.speed(0)
 salida.penup()
 salida.goto(700,700)
-salida.shape("blackhole.gif")
+salida.shape("imagenes/blackhole.gif")
 salida.color("black")
 salida.hideturtle()
 		#comida2
 comida2 =turtle.Turtle()
 comida2.speed(0)
-comida2.shape("comida.gif")
+comida2.shape("imagenes/comida.gif")
 comida2.penup() #penup se utiliza para borrar el rastro en el metodo turtle
 comida2.goto(700,700) #cordenada donde comienza la cabeza
 comida2.direction = "stop"
@@ -171,7 +171,7 @@ comida2.showturtle()
 
 comida3 =turtle.Turtle()
 comida3.speed(0)
-comida3.shape("comida3.gif")
+comida3.shape("imagenes/comida3.gif")
 comida3.penup() #penup se utiliza para borrar el rastro en el metodo turtle
 comida3.goto(700,700) #cordenada donde comienza la cabeza
 comida3.direction = "stop"
