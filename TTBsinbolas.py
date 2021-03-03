@@ -10,13 +10,13 @@ High_Score=0
 
 #pantalla
 pantalla=turtle.Screen()
-pantalla.bgpic("fondo.gif")
+pantalla.bgpic("imagenes/fondo.gif")
 pantalla.title("Tortuga TragaBolas")
 pantalla.setup(width = 600, height = 600)
 
 #Bucle for para registrar las imagenes
-listagif = ["blackhole.gif","comida1.gif","bomba.gif","minamorada.gif",
-"comida.gif","comida3.gif","arrecife.gif","botellas.gif"]
+listagif = ["imagenes/blackhole.gif","imagenes/comida1.gif","imagenes/bomba.gif","imagenes/minamorada.gif",
+"imagenes/comida.gif","imagenes/comida3.gif","imagenes/arrecife.gif","imagenes/botellas.gif"]
 for i in listagif:
 	pantalla.register_shape(i)
 
@@ -34,7 +34,7 @@ corazon.showturtle()
 #comida
 comida =turtle.Turtle()
 comida.speed(0)
-comida.shape("comida1.gif")
+comida.shape("imagenes/comida1.gif")
 comida.color("yellow")
 comida.penup() #penup se utiliza para borrar el rastro en el metodo turtle
 comida.goto(48,150) #cordenada donde comienza la cabeza
@@ -45,7 +45,7 @@ comida.showturtle()
 #funcion para debiuffs
 def debuff(mina):
 	mina.speed(0)
-	mina.shape("minamorada.gif")
+	mina.shape("imagenes/minamorada.gif")
 	mina.penup()  
 	mina.goto(1000,1000) 
 	mina.direction = "stop"
@@ -69,7 +69,7 @@ debuff(v_mina4)
 #Bombas
 #funcion bomvas
 def bomb(bomba):
-	bomba.shape("bomba.gif")
+	bomba.shape("imagenes/bomba.gif")
 	bomba.color("black")
 	bomba.penup()  
 	bomba.goto(1000,1000) 
@@ -78,7 +78,7 @@ def bomb(bomba):
 	bomba = turtle.Turtle()
 def botl(botella):
 	botella.speed(0)
-	botella.shape("botellas.gif")
+	botella.shape("imagenes/botellas.gif")
 	botella.color("black")
 	botella.penup()  
 	botella.goto(1000,1000) 
@@ -117,20 +117,20 @@ entrada =turtle.Turtle()
 entrada.speed(0)
 entrada.penup()
 entrada.goto(700,700)
-entrada.shape("blackhole.gif")
+entrada.shape("imagenes/blackhole.gif")
 entrada.hideturtle()
 
 salida =turtle.Turtle()
 salida.speed(0)
 salida.penup()
 salida.goto(700,700)
-salida.shape("blackhole.gif")
+salida.shape("imagenes/blackhole.gif")
 salida.color("black")
 salida.hideturtle()
 		#comida2
 comida2 =turtle.Turtle()
 comida2.speed(0)
-comida2.shape("comida.gif")
+comida2.shape("imagenes/comida.gif")
 comida2.penup() #penup se utiliza para borrar el rastro en el metodo turtle
 comida2.goto(700,700) #cordenada donde comienza la cabeza
 comida2.direction = "stop"
@@ -138,7 +138,7 @@ comida2.showturtle()
 
 comida3 =turtle.Turtle()
 comida3.speed(0)
-comida3.shape("comida3.gif")
+comida3.shape("imagenes/comida3.gif")
 comida3.penup() #penup se utiliza para borrar el rastro en el metodo turtle
 comida3.goto(700,700) #cordenada donde comienza la cabeza
 comida3.direction = "stop"
