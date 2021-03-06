@@ -7,7 +7,16 @@ slow = 0.01
 #marcador 
 Score =0
 High_Score=0
+# Resetear marcador
+def resetear():
+	Score = 0
+	texto.clear()
+	texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
 
+## variables
+anzuelos = [v_mina, v_mina1, v_mina2, v_mina3, v_mina4] 
+Minas = [b_mina, b_mina1,  b_mina3,]
+botellas = [b_mina2, b_mina4]
 #pantalla
 pantalla=turtle.Screen()
 pantalla.bgpic("imagenes/fondo.gif")
@@ -51,20 +60,7 @@ def debuff(mina):
 	mina.direction = "stop"
 	mina.showturtle()
 	
-v_mina = turtle.Turtle()
-debuff(v_mina)
 
-v_mina1 = turtle.Turtle()
-debuff(v_mina1)
-
-v_mina2 = turtle.Turtle()
-debuff(v_mina2)
-
-v_mina3 = turtle.Turtle()
-debuff(v_mina3)
-
-v_mina4 = turtle.Turtle()
-debuff(v_mina4)
 
 #Bombas
 #funcion bomvas
@@ -84,21 +80,20 @@ def botl(botella):
 	botella.goto(1000,1000) 
 	botella.direction = "stop"
 	botella.showturtle()
+
+
 	
-b_mina = turtle.Turtle()
-bomb(b_mina)
+### para cada elemento un bucle para crearlos como elementos turtle
+for a in anzuelos:
+	a = turtle.Turtle()
+	debuff(a)
+for b in Minas:
+	b= turtle.Turtle()
+	bomb(b)
+for t in botellas:
+	t=turtle.Turtle()
+	botl(t)
 	
-b_mina1 = turtle.Turtle()
-bomb(b_mina1)
-
-b_mina2 = turtle.Turtle()
-botl(b_mina2)
-
-b_mina3 = turtle.Turtle()
-bomb(b_mina3)
-
-b_mina4 = turtle.Turtle()
-botl(b_mina4)
 
 #Buffs
 buff =turtle.Turtle()
@@ -174,7 +169,7 @@ recinto.left(90)
 recinto.forward(300)
 
 
-#Funciones, primero se crea una funcion de movimiento up
+#Funciones, de movimiento y de interaccion con elementos
 def arriba():
 	corazon.direction ="up"
 def abajo():
@@ -248,6 +243,9 @@ def comer():
 	x = random.randint(-300,300)
 	y = random.randint(-300,300)
 	comida2.goto(x,y)
+	x = random.randint(-300,300)
+	y = random.randint(-300,300)
+	comida.goto(x,y)
 	
 #funcion comer2
 def comer2():
@@ -276,6 +274,8 @@ while True:
 	if corazon.xcor()>300 or corazon.xcor()<-300 or corazon.ycor()>300 or corazon.ycor()<-300:
 		morir()
 		
+		resetear()
+
 		
 		#Reinicio de la pantalla
 		time.sleep(2)
@@ -283,12 +283,7 @@ while True:
 		corazon.shape("turtle")
 		corazon.color("green")
 
-		# Resetear marcador
-		Score = 0
-		texto.clear()
-		texto.write("Score: {}            High_Score: {}".format(Score, High_Score), align="center", font=("Comic_sans",18	,"normal"))
-
-
+		
 	#colision con la comida	
 	if corazon.distance(comida) < 20:
 		comer()
@@ -404,21 +399,10 @@ while True:
 		v_mina1.goto(-30,0)				
 
 		v_mina.goto(30,0)
-
+	for m in Minas:
+		if corazon.distance(m)<40:
+			morir()
+	for m in botellas:
+		if corazon.distance(m)<40:
+			morir()
 		 
-	if corazon.distance(b_mina)<40: #muerte por mina negra
-		morir()
-			
-	if corazon.distance(b_mina1) <40: 
-		morir()
-			
-	if corazon.distance(b_mina2)<40 : 
-		morir()
-	
-	if corazon.distance(b_mina3)<40 :
-		morir()
-			
-	if corazon.distance(b_mina4)<40 :
-		morir()
-		
-				
