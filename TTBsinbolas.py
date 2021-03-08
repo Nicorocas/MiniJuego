@@ -21,13 +21,22 @@ x = random.randint(-300,300)
 y = random.randint(-300,300)
 #pantalla
 pantalla=turtle.Screen()
+<<<<<<< Updated upstream
 pantalla.bgpic("imagenes/fondo.gif")
+=======
+pantalla.bgpic("/imagenes/fondo.gif")
+>>>>>>> Stashed changes
 pantalla.title("Tortuga TragaBolas")
 pantalla.setup(width = 600, height = 600)
 
 #Bucle for para registrar las imagenes
+<<<<<<< Updated upstream
 listagif = ["imagenes/blackhole.gif","imagenes/comida1.gif","imagenes/bomba.gif","imagenes/minamorada.gif",
 "imagenes/comida.gif","imagenes/comida3.gif","imagenes/arrecife.gif","imagenes/botellas.gif"]
+=======
+listagif = ["/imagenes/blackhole.gif","/imagenes/comida1.gif","/imagenes/bomba.gif","/imagenes/minamorada.gif",
+"/imagenes/comida.gif","/imagenes/comida3.gif","/imagenes/arrecife.gif","/imagenes/botellas.gif"]
+>>>>>>> Stashed changes
 for i in listagif:
 	pantalla.register_shape(i)
 
@@ -45,7 +54,11 @@ corazon.showturtle()
 #comida
 comida =turtle.Turtle()
 comida.speed(0)
+<<<<<<< Updated upstream
 comida.shape("imagenes/comida1.gif")
+=======
+comida.shape("/imagenes/comida1.gif")
+>>>>>>> Stashed changes
 comida.color("yellow")
 comida.penup() #penup se utiliza para borrar el rastro en el metodo turtle
 comida.goto(48,150) #cordenada donde comienza la cabeza
@@ -67,7 +80,11 @@ def debuff(mina):
 #Bombas
 #funcion bomvas
 def bomb(bomba):
+<<<<<<< Updated upstream
 	bomba.shape("imagenes/bomba.gif")
+=======
+	bomba.shape("/imagenes/bomba.gif")
+>>>>>>> Stashed changes
 	bomba.color("black")
 	bomba.penup()  
 	bomba.goto(1000,1000) 
@@ -114,14 +131,22 @@ entrada =turtle.Turtle()
 entrada.speed(0)
 entrada.penup()
 entrada.goto(700,700)
+<<<<<<< Updated upstream
 entrada.shape("imagenes/blackhole.gif")
+=======
+entrada.shape("/imagenes/blackhole.gif")
+>>>>>>> Stashed changes
 entrada.hideturtle()
 
 salida =turtle.Turtle()
 salida.speed(0)
 salida.penup()
 salida.goto(700,700)
+<<<<<<< Updated upstream
 salida.shape("imagenes/blackhole.gif")
+=======
+salida.shape("/imagenes/blackhole.gif")
+>>>>>>> Stashed changes
 salida.color("black")
 salida.hideturtle()
 		#comida2
