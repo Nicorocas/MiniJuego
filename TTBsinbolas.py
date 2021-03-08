@@ -17,6 +17,8 @@ def resetear():
 anzuelos = [v_mina, v_mina1, v_mina2, v_mina3, v_mina4] 
 Minas = [b_mina, b_mina1,  b_mina3,]
 botellas = [b_mina2, b_mina4]
+x = random.randint(-300,300)
+y = random.randint(-300,300)
 #pantalla
 pantalla=turtle.Screen()
 pantalla.bgpic("imagenes/fondo.gif")
@@ -207,7 +209,7 @@ def mov():
 		corazon.goto(x,y)
 		#corazon.direction = "stop"		
 def morir():
-		winsound.PlaySound("death", winsound.SND_FILENAME)
+		winsound.PlaySound("sonidos/death", winsound.SND_FILENAME)
 		corazon.color("black")
 		corazon.goto(0,0)	
 		corazon.write("Estás muerto",align="center", font=("Comic_sans",18	,"normal"))
@@ -239,19 +241,16 @@ def morir():
 		
 #funcion comer
 def comer():
-	winsound.PlaySound("comer", winsound.SND_FILENAME)
-	x = random.randint(-300,300)
-	y = random.randint(-300,300)
+	winsound.PlaySound("sonidos/comer", winsound.SND_FILENAME)
+	
 	comida2.goto(x,y)
-	x = random.randint(-300,300)
-	y = random.randint(-300,300)
+	
 	comida.goto(x,y)
 	
 #funcion comer2
 def comer2():
-	winsound.PlaySound("comer", winsound.SND_FILENAME)
-	x = random.randint(-300,300)
-	y = random.randint(-300,300)
+	winsound.PlaySound("sonidos/comer", winsound.SND_FILENAME)
+	
 	comida3.goto(x,y)
 	
 	
@@ -320,9 +319,9 @@ while True:
 		buff.showturtle()
 
 		if corazon.distance(buff) < 20:
-			winsound.PlaySound("buff", winsound.SND_FILENAME)
-			x = random.randint(-300,300)
-			y = random.randint(-300,300)
+			winsound.PlaySound("sonidos/buff", winsound.SND_FILENAME)
+			
+			
 			comida2.goto(x,y)
 			x = random.randint(-500,500)
 			y = random.randint(-500,500)
@@ -338,11 +337,11 @@ while True:
 		salida.showturtle()
 
 		if corazon.distance(entrada)< 20 :
-			winsound.PlaySound("blackhole", winsound.SND_FILENAME)
+			winsound.PlaySound("sonidos/blackhole", winsound.SND_FILENAME)
 			corazon.goto(200,-200)
 			
 		if corazon.distance(salida) < 20 :
-			winsound.PlaySound("blackhole", winsound.SND_FILENAME)
+			winsound.PlaySound("sonidos/blackhole", winsound.SND_FILENAME)
 			corazon.goto(-200,200)
 				
 
@@ -350,49 +349,42 @@ while True:
 
 	if Score>0 <20:
 		 
-		x = random.randint(-300,300)
-		y = random.randint(-300,300)
+		
+		
 		v_mina.goto(x,y)
 		
 	if corazon.distance(v_mina) <20:
 		v_mina.goto(700,700)
-		x = random.randint(-300,300)
-		y = random.randint(-300,300)
+		
+		
 		b_mina.goto(x,y)
-		x = random.randint(-300,300)
-		y = random.randint(-300,300)
+		
+		
 		b_mina1.goto(x,y)
-		x = random.randint(-300,300)
-		y = random.randint(-300,300)
+		
+		
 		b_mina2.goto(x,y)
-		x = random.randint(-300,300)
-		y = random.randint(-300,300)
+		
+		
 		b_mina3.goto(x,y)
-		x = random.randint(-300,300)
-		y = random.randint(-300,300)
+		
+		
 		b_mina4.goto(x,y)
 	
 	if Score>= 10 <20:
 		corazon.speed(0)
-		x = random.randint(-300,300)
-		y = random.randint(-300,300)
+		
 		v_mina1.goto(x,y)				
 
 	if corazon.distance(v_mina1) <20:
-		x = random.randint(-300,300)
-		y = random.randint(-300,300)
 		b_mina.goto(x,y)
-		x = random.randint(-300,300)
-		y = random.randint(-300,300)
+				
 		b_mina1.goto(x,y)
-		x = random.randint(-300,300)
-		y = random.randint(-300,300)
+				
 		b_mina2.goto(x,y)
-		x = random.randint(-300,300)
-		y = random.randint(-300,300)
+			
 		b_mina3.goto(x,y)
-		x = random.randint(-300,300)
-		y = random.randint(-300,300)
+			
 		b_mina4.goto(x,y)
 
 	if Score>20:
